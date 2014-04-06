@@ -95,15 +95,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.json = { :mysql_password => "foo" }
   end
 
-  Vagrant::Config.run do |config|
-    ...
+  #  Vagrant::Config.run do |config|
 
-    config.vm.host_name = "www.aegir.local"
-    config.hosts.name = "aegir.local"
 
-    config.vm.network "hostonly", "33.33.33.60"
+   config.vm.host_name = "www.aegir.local"
+   config.hosts.name = "aegir.local"
+   config.hosts.name = "o1.sub.aegir.local"
+
+   config.vm.network :hostonly, "192.168.2.10"
   end
-
+end
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
   #
@@ -126,4 +127,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
-end
+#end
