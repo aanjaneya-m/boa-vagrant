@@ -5,4 +5,4 @@ description       "Install BOA for local development."
 version           "0.1"
 recipe            "barracuda::default", "Install BOA"
 
-supports 'ubuntu'
+supports 'debian wheezy'
